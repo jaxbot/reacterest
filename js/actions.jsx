@@ -10,5 +10,11 @@ window.PinActions = {
           actionType: Constants.UNPIN_POST,
           pinId: id
         });
+    },
+    showPost: function(id) {
+        AppDispatcher.dispatch({
+          actionType: Constants.SHOW_POST,
+          pinId: id
+        });
     }
 };

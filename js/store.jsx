@@ -1,4 +1,5 @@
 var _pins = [];
+var currentPin = null;
 
 window.Store = (function() {
   var changeCallbacks = [];
@@ -25,6 +26,9 @@ window.Store = (function() {
     },
     getAllPins: function() {
       return _pins;
+    },
+    getPinListState: function() {
+      return { currentPin: currentPin };
     }
   };
 })();
@@ -42,6 +46,10 @@ AppDispatcher.register(function(action) {
       break;
     case Constants.UNPIN_POST:
       pin.pinned = false;
+      Store.emitChange();
+      break;
+    case Constants.SHOW_POST:
+      currentPin = Store.getPinState(action.pinId);
       Store.emitChange();
       break;
 
