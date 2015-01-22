@@ -20,7 +20,10 @@ var Pin = React.createClass({
       };
     },
     _onClick: function() {
-      PinActions.pinPost(this.props.pin.id);
+      if (this.props.pin.pinned)
+        PinActions.unpinPost(this.props.pin.id);
+      else
+        PinActions.pinPost(this.props.pin.id);
     },
     componentDidMount: function() {
       Store.addChangeListener(this._onChange);
@@ -35,9 +38,8 @@ var Pin = React.createClass({
         var pin = this.props.pin;
 
         var pinButton;
-        if (!this.state.pinned) {
-          pinButton = <button onClick={this._onClick}>Pin!</button>;
-        }
+        var pinClasses = ["pinButton", this.state.pinned ? "pinned" : ""].join(" ");
+        pinButton = <button onClick={this._onClick} className={pinClasses}>Pin</button>;
         return (
             <div className="pin">
                 <img src={pin.image} alt={pin.title} />

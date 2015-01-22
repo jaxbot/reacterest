@@ -40,6 +40,10 @@ AppDispatcher.register(function(action) {
       pin.pinned = true;
       Store.emitChange();
       break;
+    case Constants.UNPIN_POST:
+      pin.pinned = false;
+      Store.emitChange();
+      break;
 
     default:
       // no op

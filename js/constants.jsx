@@ -1,3 +1,4 @@
 window.Constants = {
-    PIN_POST: 1
+    PIN_POST: 1,
+    UNPIN_POST: 2
 };
