@@ -1,9 +1,8 @@
 window.PinActions = {
-    pinPost: function(post) {
-        console.log(post);
+    pinPost: function(id) {
         AppDispatcher.dispatch({
           actionType: Constants.PIN_POST,
-          post: post
+          pinId: id
         });
     }
 };
