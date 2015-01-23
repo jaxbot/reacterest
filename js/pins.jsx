@@ -73,13 +73,19 @@ var Pin = React.createClass({
 });
 
 var PostModal = React.createClass({
+    _hide: function() {
+      PinActions.showPost(null);
+    },
     render: function() {
         var pin = this.props.pin;
         return (
-            <div className="post_view">
-                <img src={pin.image} alt={pin.title} />
-                <h2>{pin.title}</h2>
-                {pin.description}
+            <div>
+              <div className="background_fader" onClick={this._hide} />
+              <div className="post_view">
+                  <img src={pin.image} alt={pin.title} />
+                  <h2>{pin.title}</h2>
+                  {pin.description}
+              </div>
             </div>
         );
   }
