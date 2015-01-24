@@ -1,5 +1,8 @@
 var _pins = [];
 var currentPin = null;
+var showModals = {
+  newPost: false
+};
 
 window.Store = (function() {
   var changeCallbacks = [];
@@ -52,7 +55,10 @@ AppDispatcher.register(function(action) {
       currentPin = Store.getPinState(action.pinId);
       Store.emitChange();
       break;
-
+    case Constants.SHOW_NEW_POST_DIALOG:
+      showModals.newPost = true;
+      Store.emitChange();
+      break;
     default:
       // no op
   }

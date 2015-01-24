@@ -16,5 +16,10 @@ window.PinActions = {
           actionType: Constants.SHOW_POST,
           pinId: id
         });
+    },
+    newPost: function() {
+        AppDispatcher.dispatch({
+          actionType: Constants.SHOW_NEW_POST_DIALOG,
+        });
     }
 };
