@@ -14,6 +14,10 @@ header {
 	font-family: 'Courgette';
 }
 
+header .new {
+	float: right;
+}
+
 #pinList {
 	margin: 5px;
 }
@@ -75,7 +79,7 @@ header {
 	font-size: 20px;
 }
 
-.post_view {
+.modal {
 	width: 500px;
 	position: fixed;
 	top: 10%;

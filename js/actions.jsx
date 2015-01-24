@@ -21,5 +21,16 @@ window.PinActions = {
         AppDispatcher.dispatch({
           actionType: Constants.SHOW_NEW_POST_DIALOG,
         });
+    },
+    hideModal: function() {
+        AppDispatcher.dispatch({
+          actionType: Constants.HIDE_MODAL,
+        });
+    },
+    postPost: function(post) {
+        AppDispatcher.dispatch({
+          actionType: Constants.NEW_POST,
+          post: post
+        });
     }
 };

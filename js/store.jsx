@@ -31,7 +31,11 @@ window.Store = (function() {
       return _pins;
     },
     getPinListState: function() {
-      return { currentPin: currentPin };
+      return { currentPin: currentPin, show: showModals };
+    },
+    newPost: function(post) {
+      post.id = Math.random();
+      _pins.push(post);
     }
   };
 })();
@@ -57,6 +61,14 @@ AppDispatcher.register(function(action) {
       break;
     case Constants.SHOW_NEW_POST_DIALOG:
       showModals.newPost = true;
+      Store.emitChange();
+      break;
+    case Constants.HIDE_MODAL:
+      showModals = {};
+      Store.emitChange();
+      break;
+    case Constants.NEW_POST:
+      Store.newPost(action.post);
       Store.emitChange();
       break;
     default:
