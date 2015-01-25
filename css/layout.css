@@ -30,6 +30,7 @@ header .new {
 	display: inline-block;
 	margin: 5px;
 	cursor: pointer;
+	vertical-align: top;
 }
 
 .pin img {
@@ -117,5 +118,28 @@ header .new {
 	bottom: 0;
 	position: fixed;
 	z-index: 999;
+}
+
+input, textarea {
+	border: solid 1px #ccc;
+	padding: 10px;
+	outline: none;
+	margin: 10px 0;
+}
+
+.wide {
+	width: 95%;
+}
+
+.h100 {
+	height: 100px;
+}
+
+.largeinput {
+	font-size: 20px;
+}
+
+.mediuminput {
+	font-size: 15px;
 }
 

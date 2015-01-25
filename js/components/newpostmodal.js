@@ -33,9 +33,9 @@ module.exports = React.createClass({
     return (
       <Modal hide={this._hide}>
         <h2>New Post</h2>
-        <input type="text" placeholder="Title" onChange={this.updateTitle}/>
-        <input type="text" placeholder="Image URL" onChange={this.updateImage}/>
-        <textarea placeholder="Description" onChange={this.updateDescription}></textarea>
+        <input type="text" placeholder="Title" onChange={this.updateTitle} className="wide largeinput" />
+        <input type="text" placeholder="Image URL" onChange={this.updateImage} className="wide largeinput" />
+        <textarea placeholder="Description" onChange={this.updateDescription} className="wide mediuminput h100"></textarea>
         <button onClick={this._newPost}>Make new post</button>
       </Modal>
     );
