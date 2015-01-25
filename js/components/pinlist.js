@@ -1,4 +1,9 @@
-var PinList = React.createClass({
+var Pin = require("./pin");
+var PostModal = require("./PostModal");
+var NewPostModal = require("./NewPostModal");
+var Store = require("../stores/Store");
+
+module.exports = React.createClass({
   getInitialState: function() {
     return {
       currentPin: null,

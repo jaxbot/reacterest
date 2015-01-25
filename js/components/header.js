@@ -1,4 +1,6 @@
-var Header = React.createClass({
+var PinActions = require("../actions/PinActions");
+
+module.exports = React.createClass({
   _newPost: function() {
     PinActions.newPost();
   },

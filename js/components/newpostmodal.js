@@ -1,4 +1,7 @@
-var NewPostModal = React.createClass({
+var PinActions = require("../actions/PinActions");
+var Modal = require("./Modal");
+
+module.exports = React.createClass({
   getInitialState: function() {
     return {
       title: "",

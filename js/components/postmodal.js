@@ -1,4 +1,7 @@
-var PostModal = React.createClass({
+var PinActions = require("../actions/PinActions");
+var Modal = require("./Modal");
+
+module.exports = React.createClass({
   _hide: function() {
     PinActions.hideModal();
   },

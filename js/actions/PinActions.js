@@ -1,4 +1,7 @@
-window.PinActions = {
+var AppDispatcher = require("../dispatchers/AppDispatcher");
+var Constants = require("../constants/Constants.js");
+
+module.exports = {
   pinPost: function(id) {
     AppDispatcher.dispatch({
       actionType: Constants.PIN_POST,
@@ -34,3 +37,4 @@ window.PinActions = {
     });
   }
 };
+

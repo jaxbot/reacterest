@@ -1,4 +1,4 @@
-window.Constants = {
+module.exports = {
   PIN_POST: 1,
   UNPIN_POST: 2,
   SHOW_POST: 3,

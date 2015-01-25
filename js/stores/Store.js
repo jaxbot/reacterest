@@ -1,10 +1,13 @@
+var AppDispatcher = require("../dispatchers/AppDispatcher");
+var Constants = require("../constants/Constants");
+
 var _pins = [];
 var currentPin = null;
 var showModals = {
   newPost: false
 };
 
-window.Store = (function() {
+var Store = module.exports = (function() {
   var changeCallbacks = [];
 
   return {
@@ -36,6 +39,9 @@ window.Store = (function() {
     newPost: function(post) {
       post.id = Math.random();
       _pins.push(post);
+    },
+    setPins: function(data) {
+      _pins = data;
     }
   };
 })();

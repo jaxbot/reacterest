@@ -1,4 +1,4 @@
-var Modal = React.createClass({
+module.exports = React.createClass({
   _hide: function() {
     this.props.hide();
   },

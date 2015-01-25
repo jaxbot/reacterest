@@ -1,4 +1,4 @@
-window.HTTP = {
+module.exports = {
   get: function(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.onload = function() {

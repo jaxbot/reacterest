@@ -1,4 +1,7 @@
-var Pin = React.createClass({
+var PinActions = require("../actions/PinActions");
+var Store = require("../stores/Store");
+
+module.exports = React.createClass({
   getInitialState: function() {
     return {
       pinned: this.props.pin.pinned
