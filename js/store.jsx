@@ -57,6 +57,7 @@ AppDispatcher.register(function(action) {
       break;
     case Constants.SHOW_POST:
       currentPin = Store.getPinState(action.pinId);
+      showModals.post = true;
       Store.emitChange();
       break;
     case Constants.SHOW_NEW_POST_DIALOG:

@@ -15,10 +15,10 @@ var PinList = React.createClass({
       this.setState(Store.getPinListState());
     },
     render: function() {
-        var postModal = this.state.currentPin ?
+        var postModal = this.state.show.post ?
             (<PostModal pin={this.state.currentPin} />) : null;
         var newPostModal = this.state.show.newPost ?
-            (<NewPostModal hide={PinActions.hideModal}/>) : null;
+            (<NewPostModal />) : null;
         var pinNodes = this.props.data.map(function (pin) {
             return (
                 <Pin pin={pin} />
@@ -95,7 +95,7 @@ var Modal = React.createClass({
 
 var PostModal = React.createClass({
     _hide: function() {
-      PinActions.showPost(null);
+      PinActions.hideModal();
     },
     render: function() {
         var pin = this.props.pin;
@@ -120,9 +120,11 @@ var NewPostModal = React.createClass({
       };
     },
     _hide: function() {
+      PinActions.hideModal();
     },
     _newPost: function() {
       PinActions.postPost(this.state);
+      this._hide();
     },
     updateTitle: function(event) {
       this.state.title = event.target.value;
@@ -139,7 +141,7 @@ var NewPostModal = React.createClass({
     render: function() {
         var pin = this.props.pin;
         return (
-            <Modal hide={this.props.hide}>
+            <Modal hide={this._hide}>
               <h2>New Post</h2>
               <input type="text" placeholder="Title" onChange={this.updateTitle}/>
               <input type="text" placeholder="Image URL" onChange={this.updateImage}/>
